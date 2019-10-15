@@ -7,3 +7,7 @@ hardMode = () => {
   document.getElementById("hard-button").classList.toggle("active-button");
   document.getElementById("easy-button").classList.remove("active-button");
 };
+
+newGame = () => {
+  window.location.reload();
+};
