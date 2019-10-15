@@ -1,5 +1,7 @@
 const userGuessLog = [];
 let attempts = 0;
+let maxGuesses = 10;
+let computerGuess = Math.floor(Math.random() * 100 + 1);
 
 easyMode = () => {
   document.getElementById("easy-button").classList.toggle("easy-button");
@@ -17,8 +19,13 @@ newGame = () => {
 
 compareGuess = () => {
   let userGuess = document.getElementById("input-box").value;
+  let attemptsOutput = document.getElementById("attempts");
+  let textOutput = document.getElementById("text-output");
+  let input = document.getElementById("input-box");
+  let guessLogOutput = document.getElementById("guess-log");
+
   userGuessLog.push(userGuess);
-  document.getElementById("guess-log").innerHTML = userGuessLog;
+  guessLogOutput.innerHTML = userGuessLog;
   attempts++;
-  document.getElementById("attempts").innerHTML = attempts;
+  attemptsOutput.innerHTML = attempts;
 };
