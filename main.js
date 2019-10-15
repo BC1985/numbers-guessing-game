@@ -1,7 +1,7 @@
 const userGuessLog = [];
 let attempts = 0;
 let maxGuesses = 10;
-let computerGuess = Math.floor(Math.random() * 100 + 1);
+let numberToGuess = Math.floor(Math.random() * 100 + 1);
 
 easyMode = () => {
   document.getElementById("easy-button").classList.toggle("easy-button");
@@ -29,10 +29,10 @@ compareGuess = () => {
   attempts++;
   attemptsOutput.innerHTML = attempts;
   if (userGuessLog.length < maxGuesses) {
-    if (userGuess < computerGuess) {
+    if (userGuess < numberToGuess) {
       textOutput.innerHTML = "Try a higher number.";
       input.value = "";
-    } else if (userGuess > computerGuess) {
+    } else if (userGuess > numberToGuess) {
       textOutput.innerHTML = "Try a lower number.";
       input.value = "";
     } else {
