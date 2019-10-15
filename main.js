@@ -1,3 +1,5 @@
+const userGuessLog = [];
+
 easyMode = () => {
   document.getElementById("easy-button").classList.toggle("easy-button");
   document.getElementById("hard-button").classList.remove("hard-button");
@@ -10,4 +12,10 @@ hardMode = () => {
 
 newGame = () => {
   window.location.reload();
+};
+
+compareGuess = () => {
+  let userGuess = document.getElementById("input-box").value;
+  userGuessLog.push(userGuess);
+  document.getElementById("guess-log").innerHTML = userGuessLog;
 };
