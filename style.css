@@ -1,3 +1,17 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "IM Fell Great Primer SC", serif;
+}
+
+p {
+  font-size: 1.2em;
+}
+#input-box {
+  background: lightgray;
+  padding: 5px;
+  font-size: 1em;
+}
 .easy-button {
   background: blue;
   color: white;
@@ -6,4 +20,21 @@
 .hard-button {
   background: red;
   color: white;
+}
+
+.container {
+  padding: 50px;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: gray;
+  color: white;
+  box-shadow: 1px 5px 10px gray;
+}
+#new-game-button {
+  background: linear-gradient(to bottom, gray, black);
 }
