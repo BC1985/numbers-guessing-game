@@ -5,25 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC&display=swap"
+      rel="stylesheet"
+    />
     <title>Guess the number</title>
   </head>
   <body>
     <div class="container">
       <div class="panel">
-        <h1>Guess the number between 1-100 and to win eternal glory</h1>
-        <p>Select difficulty setting</p>
-        <button onclick="easyMode()" id="easy-button">
+        <h1>Guess the number between 1-100 to win eternal glory</h1>
+        <h2>Select difficulty setting</h2>
+        <button onclick="easyMode()" class="btn" id="easy-button">
           Easy: guess in 10 attempts (default)
         </button>
-        <button id="hard-button" onclick="hardMode()">
+        <button id="hard-button" class="btn" onclick="hardMode()">
           Hard: guess in 5 attempts
         </button>
-        <button id="new-game-button" onclick="newGame()">NEW GAME</button>
+        <button id="new-game-button" class="btn" onclick="newGame()">
+          NEW GAME
+        </button>
       </div>
       <div class="panel">
-        <h2 id="text-output">Enter guess below and hit enter</h2>
+        <p id="text-output">Enter guess below and hit enter</p>
         <input type="number" id="input-box" onchange="compareGuess()" />
-        <p>You have had <span id="attempts">0</span> attempts</p>
+        <p>You have <span id="attempts">10</span> attempts reamining</p>
       </div>
       <div class="panel">
         <p>Your previous guesses</p>
