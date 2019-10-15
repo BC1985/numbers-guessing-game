@@ -12,9 +12,11 @@
       <div class="panel">
         <h1>Guess the number between 1-100 and to win eternal glory</h1>
         <p>Select difficulty setting</p>
-        <button id="easy-button"></button>
-        <button id="hard-button"></button>
-        <button id="new-game-button"></button>
+        <button onclick="easyMode()" id="easy-button">
+          Easy: guess in 10 attempts (default)
+        </button>
+        <button id="hard-button">Hard: guess in 5 attempts</button>
+        <button id="new-game-button">NEW GAME</button>
       </div>
       <div class="panel">
         <h2 id="enter-guess">Enter guess below and hit enter</h2>
