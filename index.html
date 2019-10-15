@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Guess the number</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel">
+        <h1>Guess the number between 1-100 and to win eternal glory</h1>
+        <p>Select difficulty setting</p>
+        <button id="easy"></button>
+        <button id="hard"></button>
+        <button id="new-game-button"></button>
+      </div>
+      <div class="panel">
+        <h2 id="enter-guess">Enter guess below and hit enter</h2>
+        <input type="number" id="input-box" />
+        <p>You have had <span id="attempts"></span>attempts</p>
+      </div>
+      <div class="panel">
+        <p>Your previous guesses</p>
+        <p id="guess-log"></p>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
