@@ -1,4 +1,5 @@
 const userGuessLog = [];
+let attempts = 0;
 
 easyMode = () => {
   document.getElementById("easy-button").classList.toggle("easy-button");
@@ -18,4 +19,6 @@ compareGuess = () => {
   let userGuess = document.getElementById("input-box").value;
   userGuessLog.push(userGuess);
   document.getElementById("guess-log").innerHTML = userGuessLog;
+  attempts++;
+  document.getElementById("attempts").innerHTML = attempts;
 };
