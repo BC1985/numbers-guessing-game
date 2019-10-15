@@ -28,6 +28,7 @@ compareGuess = () => {
   guessLogOutput.innerHTML = userGuessLog;
   attempts++;
   attemptsOutput.innerHTML = attempts;
+  //   before you hit the maximum number of guesses
   if (userGuessLog.length < maxGuesses) {
     if (userGuess < numberToGuess) {
       textOutput.innerHTML = "Try a higher number.";
@@ -36,7 +37,14 @@ compareGuess = () => {
       textOutput.innerHTML = "Try a lower number.";
       input.value = "";
     } else {
-      textOutput.innerHTML = "Correct!";
+      textOutput.innerHTML = `That is correct, oh wise one! You guessed it in ${attempts} attempts. Let us make merry and rejoice!`;
+    }
+  } else {
+    // on the last guessing attempt
+    if (userGuess > numberToGuess || userGuess < numberToGuess) {
+      textOutput.innerHTML = `You lose, puny mortal! The correct number was ${numberToGuess}`;
+    } else {
+      textOutput.innerHTML = `That is correct, oh wise one! You guessed it in ${attempts} attempts. Let us make merry and rejoice!`;
     }
   }
 };
