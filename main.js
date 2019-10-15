@@ -1,5 +1,5 @@
 const userGuessLog = [];
-let attempts = 0;
+let remainingAttempts = 10;
 let maxGuesses = 10;
 let numberToGuess = Math.floor(Math.random() * 100 + 1);
 
@@ -28,8 +28,8 @@ compareGuess = () => {
 
   userGuessLog.push(userGuess);
   guessLogOutput.innerHTML = userGuessLog;
-  attempts++;
-  attemptsOutput.innerHTML = attempts;
+  remainingAttempts--;
+  attemptsOutput.innerHTML = remainingAttempts;
   //   before you hit the maximum number of guesses
   if (userGuessLog.length < maxGuesses) {
     if (userGuess < numberToGuess) {
