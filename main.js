@@ -4,11 +4,13 @@ let maxGuesses = 10;
 let numberToGuess = Math.floor(Math.random() * 100 + 1);
 
 easyMode = () => {
+  maxGuesses = 10;
   document.getElementById("easy-button").classList.toggle("easy-button");
   document.getElementById("hard-button").classList.remove("hard-button");
 };
 
 hardMode = () => {
+  maxGuesses = 5;
   document.getElementById("hard-button").classList.toggle("hard-button");
   document.getElementById("easy-button").classList.remove("easy-button");
 };
