@@ -28,4 +28,15 @@ compareGuess = () => {
   guessLogOutput.innerHTML = userGuessLog;
   attempts++;
   attemptsOutput.innerHTML = attempts;
+  if (userGuessLog.length < maxGuesses) {
+    if (userGuess < computerGuess) {
+      textOutput.innerHTML = "Try a higher number.";
+      input.value = "";
+    } else if (userGuess > computerGuess) {
+      textOutput.innerHTML = "Try a lower number.";
+      input.value = "";
+    } else {
+      textOutput.innerHTML = "Correct!";
+    }
+  }
 };
