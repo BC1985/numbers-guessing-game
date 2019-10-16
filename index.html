@@ -16,15 +16,19 @@
       <div class="panel">
         <h1>Guess the number between 1-100 to win eternal glory</h1>
         <h2>Select difficulty setting</h2>
-        <button onclick="easyMode()" class="btn" id="easy-button">
-          Easy: guess in 10 attempts (default)
-        </button>
-        <button id="hard-button" class="btn" onclick="hardMode()">
-          Hard: guess in 5 attempts
-        </button>
-        <button id="new-game-button" class="btn" onclick="newGame()">
-          NEW GAME
-        </button>
+        <div class="buttons-container">
+          <button onclick="easyMode()" class="btn" id="easy-button">
+            Easy: guess in 10 attempts (default)
+          </button>
+          <button id="hard-button" onclick="hardMode()">
+            Hard: guess in 5 attempts
+          </button>
+        </div>
+        <div class="new-button-container">
+          <button id="new-game-button" class="btn" onclick="newGame()">
+            NEW GAME
+          </button>
+        </div>
       </div>
       <div class="panel">
         <p id="text-output">Enter guess below and hit enter</p>
