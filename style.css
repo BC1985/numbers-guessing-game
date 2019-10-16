@@ -13,12 +13,12 @@ p {
   font-size: 1em;
 }
 .easy-button {
-  background: blue;
-  color: white;
+  background: lightsteelblue;
+  color: black;
 }
 
 .hard-button {
-  background: red;
+  background: firebrick;
   color: white;
 }
 
@@ -26,8 +26,13 @@ p {
   padding: 50px;
 }
 
-.btn {
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+}
+button {
   cursor: pointer;
+  margin: 5px 5px;
   font-size: 1em;
   padding: 10px 20px;
   border-radius: 5px;
@@ -37,4 +42,10 @@ p {
 }
 #new-game-button {
   background: linear-gradient(to bottom, gray, black);
+  width: 100%;
+}
+.new-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
