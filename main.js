@@ -18,12 +18,20 @@ hardMode = () => {
 newGame = () => {
   window.location.reload();
 };
+endGame = () => {
+  document.getElementById("new-game-button").style.display = "inline";
+  document.getElementById("easy-button").style.display = "none";
+  document.getElementById("hard-button").style.display = "none";
+  document.getElementById("input-box").setAttribute("readOnly", true);
+};
 
+clearInput = () => {
+  document.getElementById("input-box").value = "";
+};
 compareGuess = () => {
   let userGuess = document.getElementById("input-box").value;
   let attemptsOutput = document.getElementById("attempts");
   let textOutput = document.getElementById("text-output");
-  let input = document.getElementById("input-box");
   let guessLogOutput = document.getElementById("guess-log");
 
   userGuessLog.push(userGuess);
@@ -34,19 +42,23 @@ compareGuess = () => {
   if (userGuessLog.length < maxGuesses) {
     if (userGuess < numberToGuess) {
       textOutput.innerHTML = "Try a higher number.";
-      input.value = "";
+      clearInput();
     } else if (userGuess > numberToGuess) {
       textOutput.innerHTML = "Try a lower number.";
-      input.value = "";
+      clearInput();
     } else {
       textOutput.innerHTML = `That is correct, oh wise one! You guessed it in ${attempts} attempts. Let us make merry and rejoice!`;
+      endGame();
     }
   } else {
     // on the last guessing attempt
     if (userGuess > numberToGuess || userGuess < numberToGuess) {
       textOutput.innerHTML = `You lose, puny mortal! The correct number was ${numberToGuess}`;
+      clearInput();
+      endGame();
     } else {
       textOutput.innerHTML = `That is correct, oh wise one! You guessed it in ${attempts} attempts. Let us make merry and rejoice!`;
+      endGame();
     }
   }
 };
