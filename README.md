@@ -6,3 +6,7 @@
 * HTML
 * CSS
 * Vanilla Javascript
+
+### Screenshot
+![](/ngg-screenshot.png)
+
