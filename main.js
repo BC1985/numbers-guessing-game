@@ -3,7 +3,6 @@ let remainingAttempts = 10;
 let maxGuesses = 10;
 numberOfAttempts = 0;
 let numberToGuess = Math.floor(Math.random() * 100 + 1);
-console.log(numberToGuess);
 
 const container = document.getElementById("container");
 const attemptsOutput = document.getElementById("attempts");
