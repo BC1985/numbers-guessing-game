@@ -85,7 +85,6 @@ determineIfSingularNoun = () => {
 
 displayUserWinningOutput = () => {
   const userWonMessage = `<h1>that is correct, oh wise one!</h1> <h2>you guessed it in ${numberOfAttempts} ${determineIfSingularNoun()}. let us make merry and rejoice, and may the halls of valhala forever echo thy name!</h2>`;
-  container.className += " user-won";
   userInterface.innerHTML = userWonMessage;
   attemptsCounter.remove();
   clearInput();
