@@ -1,14 +1,15 @@
+"use strict";
 const userGuessLog = [];
 let remainingAttempts = 10;
 let maxGuesses = 10;
-numberOfAttempts = 0;
+let numberOfAttempts = 0;
 let numberToGuess = Math.floor(Math.random() * 100 + 1);
 
 const container = document.getElementById("container");
 const attemptsOutput = document.getElementById("attempts");
 const userInterface = document.getElementById("user-interface");
 const attemptsCounter = document.getElementById("attempts-counter");
-easyMode = () => {
+const easyMode = () => {
   maxGuesses = 10;
   remainingAttempts = 10;
   attemptsOutput.innerHTML = remainingAttempts;
@@ -16,7 +17,7 @@ easyMode = () => {
   document.getElementById("hard-button").classList.remove("hard-button");
 };
 
-hardMode = () => {
+const hardMode = () => {
   maxGuesses = 5;
   remainingAttempts = 5;
   attemptsOutput.innerHTML = remainingAttempts;
@@ -24,20 +25,20 @@ hardMode = () => {
   document.getElementById("easy-button").classList.remove("easy-button");
 };
 
-newGame = () => {
+const newGame = () => {
   window.location.reload();
 };
-endGame = () => {
+const endGame = () => {
   let textOutput = document.getElementById("text-output");
   textOutput.innerHTML = "";
   document.getElementById("new-game-button").style.display = "inline";
   document.getElementById("input-box").setAttribute("readOnly", true);
 };
 
-clearInput = () => {
+const clearInput = () => {
   document.getElementById("input-box").value = "";
 };
-compareGuess = () => {
+const compareGuess = () => {
   numberOfAttempts++;
   // disable buttons when once input entered and game started
   document.getElementById("hard-button").disabled = true;
@@ -74,7 +75,7 @@ compareGuess = () => {
   }
 };
 // match feedback to number of guesses made
-determineIfSingularNoun = () => {
+const determineIfSingularNoun = () => {
   if (numberOfAttempts === 1) {
     return "attempt";
   } else {
@@ -82,7 +83,7 @@ determineIfSingularNoun = () => {
   }
 };
 
-displayUserWinningOutput = () => {
+const displayUserWinningOutput = () => {
   const userWonMessage = `<h1>That is correct, oh wise one!</h1> <h2>You guessed it in ${numberOfAttempts} ${determineIfSingularNoun()}. Let us make merry and rejoice, and may the halls of Valhalla forever echo thy name!</h2>`;
   userInterface.innerHTML = userWonMessage;
   attemptsCounter.remove();
@@ -90,7 +91,7 @@ displayUserWinningOutput = () => {
   endGame();
 };
 
-displayUserLosingOutput = () => {
+const displayUserLosingOutput = () => {
   const userLostMessage = `<h1>You lose, puny mortal!</h1> <h2>The correct number was ${numberToGuess}. Are you foolish enough to challenge me again?</h2>`;
   // display message
   userInterface.innerHTML = userLostMessage;
