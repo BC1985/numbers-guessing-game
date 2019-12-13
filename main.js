@@ -83,7 +83,7 @@ determineIfSingularNoun = () => {
 };
 
 displayUserWinningOutput = () => {
-  const userWonMessage = `<h1>that is correct, oh wise one!</h1> <h2>you guessed it in ${numberOfAttempts} ${determineIfSingularNoun()}. let us make merry and rejoice, and may the halls of valhala forever echo thy name!</h2>`;
+  const userWonMessage = `<h1>That is correct, oh wise one!</h1> <h2>You guessed it in ${numberOfAttempts} ${determineIfSingularNoun()}. Let us make merry and rejoice, and may the halls of Valhalla forever echo thy name!</h2>`;
   userInterface.innerHTML = userWonMessage;
   attemptsCounter.remove();
   clearInput();
@@ -91,7 +91,7 @@ displayUserWinningOutput = () => {
 };
 
 displayUserLosingOutput = () => {
-  const userLostMessage = `<h1>You lose, puny mortal!</h1> <h2>The correct number was ${numberToGuess}. are you foolish enough to challenge me again?</h2>`;
+  const userLostMessage = `<h1>You lose, puny mortal!</h1> <h2>The correct number was ${numberToGuess}. Are you foolish enough to challenge me again?</h2>`;
   // display message
   userInterface.innerHTML = userLostMessage;
   // change style upon losing
