@@ -3,6 +3,9 @@
   padding: 0;
   font-family: "IM Fell Great Primer SC", serif;
 }
+body {
+  margin: 0;
+}
 
 p {
   font-size: 1.2em;
@@ -11,6 +14,24 @@ p {
   background: lightgray;
   padding: 5px;
   font-size: 1em;
+}
+
+#container {
+  padding: 50px;
+}
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+.btn {
+  cursor: pointer;
+  margin: 15px 15px 0 0;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background: gray;
+  color: white;
 }
 .easy-button {
   background: lightsteelblue;
@@ -21,31 +42,25 @@ p {
   background: firebrick;
   color: white;
 }
-
-.container {
-  padding: 50px;
-}
-
-.buttons-container {
-  display: flex;
-  flex-direction: column;
-}
-button {
-  cursor: pointer;
-  margin: 5px 5px;
-  font-size: 1em;
-  padding: 10px 20px;
-  border-radius: 5px;
-  background: gray;
-  color: white;
-  box-shadow: 1px 5px 10px gray;
-}
 #new-game-button {
   background: linear-gradient(to bottom, gray, black);
-  width: 100%;
+  width: 20%;
 }
 .new-button-container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  margin: 20px 0px;
+}
+
+.user-lost {
+  background-color: rgb(36, 34, 34);
+  color: white;
+  background-image: url("https://www.offtheleash.net.au/sites/default/files/uploads/event/images/thumbnails/dsc_0073_smaller.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.user-won {
+  background: url("https://i.pinimg.com/originals/f5/d6/bd/f5d6bdd60c34b7c8a238e781f676e509.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
