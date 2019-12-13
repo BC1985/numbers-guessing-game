@@ -17,10 +17,10 @@
         <h1>Guess the number between 1-100 to win eternal glory</h1>
         <h2>Select difficulty setting</h2>
         <div class="buttons-container">
-          <button onclick="easyMode()" class="btn" id="easy-button">
+          <button id="easy-button" class="btn easy-button" onclick="easyMode()">
             Easy: guess in 10 attempts (default)
           </button>
-          <button id="hard-button" onclick="hardMode()">
+          <button id="hard-button" class="btn" onclick="hardMode()">
             Hard: guess in 5 attempts
           </button>
         </div>
@@ -33,10 +33,12 @@
       <div class="panel">
         <p id="text-output">Enter guess below and hit enter</p>
         <input type="number" id="input-box" onchange="compareGuess()" />
-        <p>You have <span id="attempts">10</span> attempts reamining</p>
+        <p id="attempts-counter">
+          You have <span id="attempts">10</span> attempts remaining
+        </p>
       </div>
       <div class="panel">
-        <p>Your previous guesses</p>
+        <p>Your previous guesses:</p>
         <p id="guess-log"></p>
       </div>
     </div>
