@@ -33,7 +33,7 @@ body {
   background: lightgray;
   padding: 5px;
   font-size: 1em;
-  width: 10%;
+  width: 15%;
 }
 .user-lost {
   background: rgb(26, 25, 25);
@@ -47,16 +47,7 @@ body {
   #container {
     padding: 10%;
   }
-  #input-box {
-    background: lightgray;
-    padding: 5px;
-    font-size: 1em;
-    width: 20%;
-  }
 
-  #user-interface h2 {
-    font-size: 1.1em;
-  }
   .buttons-container {
     display: flex;
     flex-direction: column;
@@ -86,15 +77,10 @@ body {
   #container {
     padding: 10%;
   }
-  #input-box {
-    background: lightgray;
-    padding: 5px;
-    font-size: 1em;
-    width: 10%;
-  }
 
   .buttons-container {
     display: flex;
+    flex-direction: column;
   }
   .btn {
     margin: 5px 0px 5px 5px;
