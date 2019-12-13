@@ -3,6 +3,7 @@ let remainingAttempts = 10;
 let maxGuesses = 10;
 numberOfAttempts = 0;
 let numberToGuess = Math.floor(Math.random() * 100 + 1);
+console.log(numberToGuess);
 
 const container = document.getElementById("container");
 const attemptsOutput = document.getElementById("attempts");
@@ -28,6 +29,8 @@ newGame = () => {
   window.location.reload();
 };
 endGame = () => {
+  let textOutput = document.getElementById("text-output");
+  textOutput.innerHTML = "";
   document.getElementById("new-game-button").style.display = "inline";
   document.getElementById("input-box").setAttribute("readOnly", true);
 };
@@ -37,8 +40,6 @@ clearInput = () => {
 };
 compareGuess = () => {
   numberOfAttempts++;
-  const userWonMessage = `<h1>that is correct, oh wise one!</h1> <p>you guessed it in ${numberOfAttempts} ${determineIfSingularNoun()}. let us make merry and rejoice and may the halls of valhala forever echo thy name!</p>`;
-  const userLostMessage = `<h1>You lose, puny mortal!</h1> <p>The correct number was ${numberToGuess}</p>`;
   // disable buttons when once input entered and game started
   document.getElementById("hard-button").disabled = true;
   document.getElementById("easy-button").disabled = true;
@@ -47,6 +48,7 @@ compareGuess = () => {
   let guessLogOutput = document.getElementById("guess-log");
 
   userGuessLog.push(`${userGuess} `);
+  // display entered guesses
   guessLogOutput.innerHTML = userGuessLog;
   remainingAttempts--;
   attemptsOutput.innerHTML = remainingAttempts;
@@ -59,31 +61,16 @@ compareGuess = () => {
       textOutput.innerHTML = "Try a lower number.";
       clearInput();
     } else {
-      userInterface.innerHTML = userWonMessage;
-      attemptsCounter.remove();
-      container.className += " user-won";
-
-      clearInput();
-      endGame();
+      displayUserWinningOutput();
     }
   } else {
     // on the last guessing attempt if number is wrong
     if (userGuess > numberToGuess || userGuess < numberToGuess) {
       numberOfAttempts++;
-      // display message
-      userInterface.innerHTML = userLostMessage;
-      // change style upon losing
-      container.className += " user-lost";
-      clearInput();
-      endGame();
+      displayUserLosingOutput();
     } else {
       // Or if user is right
-      container.className += " user-won";
-
-      userInterface.innerHTML = userWonMessage;
-      attemptsCounter.remove();
-      clearInput();
-      endGame();
+      displayUserWinningOutput();
     }
   }
 };
@@ -94,4 +81,23 @@ determineIfSingularNoun = () => {
   } else {
     return "attempts";
   }
+};
+
+displayUserWinningOutput = () => {
+  const userWonMessage = `<h1>that is correct, oh wise one!</h1> <h2>you guessed it in ${numberOfAttempts} ${determineIfSingularNoun()}. let us make merry and rejoice, and may the halls of valhala forever echo thy name!</h2>`;
+  container.className += " user-won";
+  userInterface.innerHTML = userWonMessage;
+  attemptsCounter.remove();
+  clearInput();
+  endGame();
+};
+
+displayUserLosingOutput = () => {
+  const userLostMessage = `<h1>You lose, puny mortal!</h1> <h2>The correct number was ${numberToGuess}. are you foolish enough to challenge me again?</h2>`;
+  // display message
+  userInterface.innerHTML = userLostMessage;
+  // change style upon losing
+  container.className += " user-lost";
+  clearInput();
+  endGame();
 };
