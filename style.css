@@ -1,3 +1,5 @@
+/* Global settings */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -7,25 +9,11 @@ body {
   margin: 0;
 }
 
-p {
-  font-size: 1.2em;
-}
-#input-box {
-  background: lightgray;
-  padding: 5px;
-  font-size: 1em;
-}
-
-#container {
-  padding: 50px;
-}
-.buttons-container {
-  display: flex;
-  flex-direction: row;
+#new-game-button {
+  background: linear-gradient(to bottom, gray, black);
+  width: 40%;
 }
 .btn {
-  cursor: pointer;
-  margin: 15px 15px 0 0;
   font-size: 1em;
   padding: 10px 20px;
   border-radius: 5px;
@@ -37,30 +25,193 @@ p {
   background: lightsteelblue;
   color: black;
 }
-
 .hard-button {
   background: firebrick;
   color: white;
 }
-#new-game-button {
-  background: linear-gradient(to bottom, gray, black);
-  width: 20%;
+#input-box {
+  background: lightgray;
+  padding: 5px;
+  font-size: 1em;
+  width: 10%;
 }
-.new-button-container {
-  margin: 20px 0px;
+.user-lost {
+  background: rgb(26, 25, 25);
+  color: wheat;
 }
 
-.user-lost {
-  background-color: rgb(36, 34, 34);
-  color: white;
-  background-image: url("https://www.offtheleash.net.au/sites/default/files/uploads/event/images/thumbnails/dsc_0073_smaller.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #container {
+    padding: 10%;
+  }
+  #input-box {
+    background: lightgray;
+    padding: 5px;
+    font-size: 1em;
+    width: 20%;
+  }
+
+  #user-interface h2 {
+    font-size: 1.1em;
+  }
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn {
+    margin-bottom: 15px;
+  }
+
+  #new-game-button {
+    background: linear-gradient(to bottom, gray, black);
+    width: 100%;
+  }
+  .new-button-container {
+    margin: 20px 0px;
+  }
+  #push {
+    margin-top: 40%;
+  }
 }
-.user-won {
-  background: url("https://i.pinimg.com/originals/f5/d6/bd/f5d6bdd60c34b7c8a238e781f676e509.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  p {
+    font-size: 1.2em;
+  }
+
+  #container {
+    padding: 10%;
+  }
+  #input-box {
+    background: lightgray;
+    padding: 5px;
+    font-size: 1em;
+    width: 10%;
+  }
+
+  .buttons-container {
+    display: flex;
+  }
+  .btn {
+    margin: 5px 0px 5px 5px;
+  }
+
+  .new-button-container {
+    margin: 20px 0px;
+  }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #push {
+    margin-top: 60%;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  #container {
+    padding: 10%;
+  }
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  #push {
+    margin-top: 90%;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  #container {
+    padding: 10%;
+  }
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  #push {
+    margin-top: 40vh;
+  }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 2) {
+  #container {
+    padding: 10%;
+  }
+  .new-button-container {
+    margin: 20px 0px;
+  }
+  .btn {
+    margin: 5px 10px 5px 5px;
+  }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  #push {
+    margin-top: 55vh;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  #push {
+    margin-top: 40vh;
+  }
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  #container {
+    padding: 10%;
+  }
+  #container p {
+    font-size: 1.4em;
+  }
+  #user-interface h1 {
+    font-size: 3em;
+  }
+  .btn {
+    margin: 10px 10px 10px 5px;
+  }
+  #push {
+    margin-top: 15%;
+  }
+}
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1600px) {
+  #container {
+    padding: 10%;
+  }
+  #container p {
+    font-size: 1.4em;
+  }
+  #user-interface h1 {
+    font-size: 3em;
+  }
+  .btn {
+    margin: 10px 10px 10px 5px;
+  }
+  #push {
+    margin-top: 15%;
+  }
 }
