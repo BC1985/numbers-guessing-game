@@ -31,8 +31,14 @@
         </button>
       </div>
       <div class="panel">
-        <p id="text-output">Enter guess below and hit enter</p>
-        <input type="number" id="input-box" onchange="compareGuess()" />
+        <p id="text-output">Enter number below</p>
+        <input
+          type="number"
+          min="1"
+          max="100"
+          id="input-box"
+          onchange="compareGuess()"
+        />
         <p id="attempts-counter">
           You have <span id="attempts">10</span> attempts remaining
         </p>
