@@ -39,15 +39,20 @@ const clearInput = () => {
   document.getElementById("input-box").value = "";
 };
 const compareGuess = () => {
-  numberOfAttempts++;
   // disable buttons when once input entered and game started
   document.getElementById("hard-button").disabled = true;
   document.getElementById("easy-button").disabled = true;
   let userGuess = document.getElementById("input-box").value;
   let textOutput = document.getElementById("text-output");
   let guessLogOutput = document.getElementById("guess-log");
-
-  userGuessLog.push(`${userGuess} `);
+  // validate input to make sure it's only numbers in range
+  if (userGuess == 0 || userGuess > 100) {
+    textOutput.innerHTML = "Please enter number between 1 and 100";
+    clearInput();
+    return false;
+  }
+  numberOfAttempts++;
+  userGuessLog.push(` ${userGuess}`);
   // display entered guesses
   guessLogOutput.innerHTML = userGuessLog;
   remainingAttempts--;
@@ -100,3 +105,11 @@ const displayUserLosingOutput = () => {
   clearInput();
   endGame();
 };
+function validateInput() {
+  let textOutput = document.getElementById("text-output");
+  let number = document.getElementById("input-box").value;
+  if (isNaN(number) || number === 0 || number > 100) {
+    textOutput.innerHTML = "Please enter only numbers between 1 and 100";
+    return false;
+  }
+}
